@@ -5,7 +5,7 @@ Radijsje was a site created for a pop-up seasonal restaurant located in Southern
 <img src="radijsje.png" alt="Screenshot of the Radijsje site">
 </p>
 
-**Link to project:** https://m47o.github.io/radijsje/
+**Link to project:** [Check it out here!](https://m47o.github.io/radijsje/)
 ## How It's Made:
 
 **Tech used:** HTML, CSS
