@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    --standardorange:   rgba(253, 154, 1, 1);
+    --darkorange:       rgba(203, 122, 1, 1);
+    --lightorange:      rgba(254, 173, 52, 1);
+    --softgray:         rgba(242, 246, 247, 1);
+    --black:            rgba(48, 44, 44, 1);
+
+    --shadow-color: 192deg 7% 60%;
+    --shadow-down:
+      0px 0.9px 1px hsl(var(--shadow-color) / 0.29),
+      0px 2.4px 2.7px -0.6px hsl(var(--shadow-color) / 0.29),
+      -0.1px 4.8px 5.4px -1.2px hsl(var(--shadow-color) / 0.29),
+      -0.2px 9.6px 10.8px -1.9px hsl(var(--shadow-color) / 0.29),
+      -0.4px 18.5px 20.8px -2.5px hsl(var(--shadow-color) / 0.29);
+
+    --shadow-left:
+    1px 1px 1.2px hsl(var(--shadow-color) / 0.68),
+    2.2px 2.2px 2.7px -1.4px hsl(var(--shadow-color) / 0.54),
+    7.4px 7.4px 9px -2.8px hsl(var(--shadow-color) / 0.4),
+    21px 21px 25.6px -4.2px hsl(var(--shadow-color) / 0.26);
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: var(--softgray)
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(217deg, rgb(209 51 52), rgba(242, 246, 247, 1)); 
+    border-radius: 10px;
+  }
+  
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(hsl(360, 63%, 41%), rgba(242, 246, 247, 1))
+}
+
+body{
+    background: var(--softgray);
+    color: var(--black);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.scroll-container {
+    position:relative;
+    width:100vw;
+    height:100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+
+    scroll-behavior: smooth;
+}
+
+header{
+    background: url("../img/food-right.jpg");
+    background-repeat: repeat;
+    background-position: right center;
+    background-size: cover;
+
+    height: 100vh;
+    width: 100%;
+
+    scroll-snap-align: start;
+
+    position: relative;
+    z-index: 4;
+    box-shadow: var(--shadow-down)
+}
+
+a {
+    text-decoration: none;
+    color: var(--standardorange);
+}
+
+.accent-block {
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    top: 30px;
+    background: var(--standardorange);
+}
+
+header > img {
+    height: auto;
+    width: 350px;
+
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    transform: rotate(03deg);
+}
+
+
+h1 {
+    width: fit-content;
+    margin: auto 0 0 120px;
+    color: var(--standardorange);
+    font-size: 11.5em;
+    text-shadow: 1px 5px 5px hsl(192, 24%, 76%);
+    /* transform: rotate(-5deg); */
+    user-select:none;
+}
+
+header span {
+    margin: 20px 0 auto 150px;
+    /* transform: rotate(-4deg); */
+    font-size: 1.3rem;
+    position: relative;
+    left: 50px;
+}
+
+header span div {
+    display: inline;
+    padding-bottom: 5px;
+    border-bottom: 3px solid var(--standardorange);
+}
+
+section {
+    display: flex;
+    position: relative;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    height: 100vh;
+
+    box-shadow: var(--shadow-down)
+}
+
+.about {
+    background: url("../img/vegetables.jpg");
+    background-repeat: repeat;
+    background-position: left center;
+    background-size: cover;
+    z-index: 3;
+}
+
+.card {
+    position: absolute;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+    background: var(--softgray);
+    align-self: center;
+    box-shadow: var(--shadow-down);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.card-span {
+    color: var(--standardorange);
+    display: block;
+    width: fit-content;
+    padding: 5px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 120px 0 0 45px;
+}
+
+h2 {
+    font-size: 3.5rem;
+    margin: 20px 45px;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 15px 45px;
+}
+
+.button {
+    margin: 30px 40px;
+    width: 250px;
+    color: white;
+    font-weight: bold;
+    display: none;
+}
+
+.button > div {
+    margin: 0;
+    display: inline;
+    padding: 10px;
+}
+
+.button-left {
+    border-radius: 12px 0 0 12px;
+    background: var(--standardorange)
+}
+
+.button-left:hover{
+    background: var(--darkorange)
+}
+.button-right {
+    position: relative;
+    right: 4px;
+    border-radius: 0 12px 12px 0;
+    background: var(--lightorange);
+    font-size: 16px;
+}
+.button-right:hover{
+    /* background: var(--standardorange) */
+    background: var(--darkorange)
+}
+
+.menu {
+    background: url("../img/radishes-two.jpg");
+    background-repeat: no-repeat;;
+    background-position: right center;
+    background-size: cover;
+    z-index: 2; 
+}
+
+
+/* MENU */
+
+.menu > .card {
+    position: absolute;
+    left: 0;
+    box-shadow: var(--shadow-left)
+}
+
+.menupdf-container {
+    align-items: center;
+}
+
+
+
+/* bottom section */
+.contact {
+    background: url("../img/chard.jpg");
+    background-repeat: repeat;
+    background-position: left center;
+    background-size: cover;
+}
+
+address {
+    text-align:center;
+    font-style: normal;
+}
+
+address > span {
+    display: block;
+    color: var(--darkorange);
+    font-size: 1.25rem;
+
+    margin-top: 90px;
+}
+
+address > small {
+    display: block;
+    color: var(--darkorange );
+
+    font-size: 1.1rem;
+
+    margin-top: 25px;
+}
+
+address > span:first-child{
+    margin-bottom: 25px;
+}
+
+address > a {
+    font-size: 1.5rem;
+    border-bottom: 1px dotted var(--darkorange);
+    transition: border-bottom 0.5s, color 0.5s;
+    
+}
+
+address > a:hover{
+    border-bottom: 1px dotted var(--softgray);
+    color: var(--lightorange);
+
+}
+
+footer {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+
+    height: 45px;
+    width: 100%;
+
+    background: rgba(253, 152, 1, 0.452);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
+    color: var(--softgray);
+    font-size: 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+footer a {
+    color: var(--softgray);
+}
+
+footer > a {
+    margin-left: 35px;
+    border: 2px solid var(--darkorange);
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 1rem;
+}
+
+footer > a:hover{
+    background-color: var(--darkorange)
+}
+
+footer > a:active {
+    position: relative;
+    top: 2px;
+}
+
+footer > div {
+    display: flex;
+    margin-right: 35px;
+}
+
+footer > div .fa-brands {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-size: 32px;
+    margin-right: 10px;
+}
+
+footer > div .fa-brands:hover{
+    color: var(--darkorange)
+}
+/* MEDIA QUERIES */
+@media (min-width: 1201px) and (max-width: 1395px){
+    h1{
+        font-size: 8em;
+    }
+}
+@media (min-width: 501px) and (max-width: 900px){
+    h1{
+        font-size: 5em;
+        margin-left: 20px;
+    }
+    
+    h2 {
+        font-size: 2em;
+    }
+
+    header span {
+        left: 0;
+        margin: 20px auto auto 25px;
+        font-weight: bold;
+        text-shadow: 0 1px rgba(242, 246, 247, 0.5);
+    }
+    .card {
+        width: 100%;
+        overflow: scroll;
+        background-color: rgba(242, 246, 247, 0.9);;
+    }
+
+    footer {
+        justify-content: center;
+        font-size: 1rem;
+    }
+
+    footer a {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    h1{
+        font-size: 5em;
+        margin-left: 20px;
+    }
+    
+    h2 {
+        font-size: 2em;
+    }
+
+    header span {
+        left: 0;
+        margin: 20px auto auto 25px;
+        font-weight: bold;
+        text-shadow: 0 1px rgba(242, 246, 247, 0.5);
+    }
+    .card {
+        width: 100%;
+        overflow: scroll;
+        background-color: rgba(242, 246, 247, 0.9);;
+    }
+
+    footer {
+        justify-content: center;
+        font-size: 1rem;
+    }
+
+    footer a {
+        display: none;
+    }
+}
+
