@@ -68,7 +68,7 @@ body{
 }
 
 header{
-    background: url("../img/food-right.jpg");
+    background: url("../img/food-right.webp");
     background-repeat: repeat;
     background-position: right center;
     background-size: cover;
@@ -142,7 +142,7 @@ section {
 }
 
 .about {
-    background: url("../img/vegetables.jpg");
+    background: url("../img/vegetables.webp");
     background-repeat: repeat;
     background-position: left center;
     background-size: cover;
@@ -219,13 +219,12 @@ p {
 }
 
 .menu {
-    background: url("../img/radishes-two.jpg");
+    background: url("../img/radishes-two.webp");
     background-repeat: no-repeat;;
     background-position: right center;
     background-size: cover;
     z-index: 2; 
 }
-
 
 /* MENU */
 
@@ -239,11 +238,9 @@ p {
     align-items: center;
 }
 
-
-
 /* bottom section */
 .contact {
-    background: url("../img/chard.jpg");
+    background: url("../img/chard.webp");
     background-repeat: repeat;
     background-position: left center;
     background-size: cover;
